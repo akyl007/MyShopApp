@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+    Home page
+{% endblock %}
+
+
+{% block content %}
+<div class="addProduct">
+    <h2>Add new product</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.name }}<br>
+        {{form.price}}<br>
+        {{form.description}}<br>
+        {{form.image}}<br>
+        {{ error }}
+        <button type="submit" >Add</button>
+    </form>
+
+
+
+</div>
+    {% endblock %}

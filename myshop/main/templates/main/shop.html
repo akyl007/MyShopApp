@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+    Home page
+{% endblock %}
+
+
+{% block content %}
+<div class="hotwishes">
+  <h2>Hot Wishes</h2>
+
+</div>
+<div class="mainShop">
+
+  <div class="product-container">
+        {% for el in products %}
+        <div class="product-card">
+            {% if el.image %}<img src="{{ el.image.url }}" alt="{{ el.name }}" class="product-image">{% endif %}
+            <h2 class="product-name">{{ el.name }}</h2>
+            <p class="product-price">${{ el.price }}</p>
+            <p class="product-description">{{ el.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
