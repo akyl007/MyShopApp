@@ -9,7 +9,7 @@
 {% block content %}
 <div class="addProduct">
     <h2>Add new product</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ form.name }}<br>

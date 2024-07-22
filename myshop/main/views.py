@@ -24,7 +24,7 @@ def addproduct(request):
 
     form = ProductForm()
 
-    # error = ''
+    error = ''
     # if request.method == 'POST':
     #     form = ProductForm(request.POST)
     #     if form.is_valid():
@@ -33,16 +33,19 @@ def addproduct(request):
     #     else:
     #         error = form.errors
     #
-    # data = {'form': form,
-    #         'error': error}
+    #
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            print('NO ERROR')
             return redirect('shop')  # Замените 'product_list' на ваш URL для списка продуктов
     else:
-        form = ProductForm()
-    return render(request, 'main/addproduct.html', {'form': form})
+        error = form.errors
+        print('ERROR')
+    data = {'form': form,
+             'error': error}
+    return render(request, 'main/addproduct.html', data)
 
 
 
