@@ -1,9 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-}
+
 
 .product-container {
     display: flex;
@@ -51,4 +46,90 @@ body {
     font-size: 1em;
     color: #6c757d;
     margin-bottom: 20px;
+}
+.btn {
+    text-decoration: none;
+}
+/* Основные стили для всего сайта */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.boddy {
+    min-height: 81vh;
+}
+/* Стили для заголовка */
+header {
+    background-color: #013220; /* Темно-зеленый цвет */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul li {
+    margin-right: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header ul li a:hover {
+    background-color: #0e4d2f; /* Более светлый оттенок зеленого */
+}
+
+.buttonAdd button {
+    background-color: #ffc107; /* Цвет кнопки */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttonAdd button a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.buttonAdd button:hover {
+    background-color: #e0a800; /* Более темный оттенок кнопки */
+}
+
+/* Стили для основного контента */
+main {
+    padding: 20px;
+}
+
+/* Стили для подвала */
+footer {
+    background-color: #013220;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+
+}
+
+
+.footerP {
+    margin: 0;
 }
