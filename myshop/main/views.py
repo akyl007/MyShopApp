@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import ProductForm
 from .models import Product
-from django.views.decorators.http import require_POST
 
 def home(request):
 
@@ -39,7 +38,7 @@ def addproduct(request):
         if form.is_valid():
             form.save()
             print('NO ERROR')
-            return redirect('shop')  # Замените 'product_list' на ваш URL для списка продуктов
+            return redirect('shop')
     else:
         error = form.errors
         print('ERROR')
@@ -50,6 +49,13 @@ def addproduct(request):
 
 
     return render(request, 'main/addproduct.html',data)
+
+
+
+def product_detail(request, pk):
+
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'product_detail.html', {'product': product})
 
 
 
